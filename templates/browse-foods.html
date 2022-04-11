@@ -1,0 +1,326 @@
+{% load static %}
+<html>
+    <head>
+        <title>Your Diet Plan</title>
+        <style>
+            img{
+                float: left;
+                padding: 10px;
+                width: 150px;
+                height: 150px;
+            }
+            .segment{
+                background-color:white;
+                border-radius: 10px;
+                margin-left: 15%;
+                margin-right: 50%;
+                margin-bottom: 4%;
+                padding-bottom: 3.5%;
+                padding-top: 1.5%;
+                color: grey;
+            }
+            .segment {
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+                transition: 0.4s;
+            }
+            .segment:hover {
+                transform: translate(0, -3px);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            }
+            body{
+                background-image: url('{% static "images/response.jpg" %} ');
+                background-repeat: no-repeat;
+                background-attachment: fixed; 
+                background-size: 100% 100%;
+            }
+            h1{
+                color: black;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>Hi ,Catch up your Diet Plan</h1>
+        </div>
+
+
+        {% if list %}
+
+            {% for item in list %}
+                <div class="segment">
+                    <img class="img" src="{{ item.ItemImgPath }}" alt="{{ item.ItemName }}">
+                    <h3 style="font-size: 20px;"> {{ item.ItemName }} </h3>
+                    <p>Calories : {{ item.calories }} </p> 
+                    <p>Quantity: {{ item.ItemCount }} {{ item.ItemType }}</p> 
+                </div>
+                
+            {% endfor %}
+
+        {% else %}
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\Idly.jpg' %}" alt="idly">
+                <h3 style="font-size: 20px;">Idly</h3>
+                <p>Calories : 300</p>
+                <p>Quantity: 5 pieces</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\Rice.jpg' %}" alt="rice">
+                <h3 style="font-size: 20px;">Rice</h3>
+                <p>Calories : 405</p>
+                <p>Quantity : 2 Cups</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\chapathi.jpg' %}" alt="chapathi">
+                <h3 style="font-size: 20px;">Chapathi</h3>
+                <p>Calories : 425</p>
+                <p>Quantity: 5 pieces</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\Poori.jpg' %}" alt="poori">
+                <h3 style="font-size: 20px;">Poori</h3>
+                <p>Calories : 550</p>
+                <p>Quantity: 5 pieces</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\Dosa.jpg' %}" alt="Dosa">
+                <h3 style="font-size: 20px;">Dosa</h3>
+                <p>Calories : 350</p>
+                <p>Quantity: 3 pieces</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\Chicken-Biryani.jpg' %}" alt="chicken-biryani">
+                <h3 style="font-size: 20px;">Chicken Biryani</h3>
+                <p>Calories : 600</p>
+                <p>Quantity: 1 plate</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\Veg-Biryani.jpg' %}" alt="veg-biryani">
+                <h3 style="font-size: 20px;">Veg Biryani</h3>
+                <p>Calories : 450</p>
+                <p>Quantity: 1 plate</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\veg-fried-rice.jpg' %}" alt="fried-rice">
+                <h3 style="font-size: 20px;">Veg Fried Rice</h3>
+                <p>Calories : 490</p>
+                <p>Quantity: 1 plate</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\chicken-fried-rice.jpg' %}" alt="chicken-fried-rice">
+                <h3 style="font-size: 20px;">Chicken Fried Rice</h3>
+                <p>Calories : 550</p>
+                <p>Quantity: 1 plate</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\sandwich.jpg' %}" alt="sandwich">
+                <h3 style="font-size: 20px;">Sandwich</h3>
+                <p>Calories : 415</p>
+                <p>Quantity: 2 pieces</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\potato-salad.jpg' %}" alt="potato Salad">
+                <h3 style="font-size: 20px;">Potato Salad</h3>
+                <p>Calories : 390</p>
+                <p>Quantity: 1 cup</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\chicken.jpg' %}" alt="chicken">
+                <h3 style="font-size: 20px;">chicken</h3>
+                <p>Calories : 510</p>
+                <p>Quantity: 1 cup</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\omelette.jpg' %}" alt="omelette">
+                <h3 style="font-size: 20px;">Omelette</h3>
+                <p>Calories : 100</p>
+                <p>Quantity: 1</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\veg-noodles.jpg' %}" alt="veg Noodles">
+                <h3 style="font-size: 20px;">Veg Noodles</h3>
+                <p>Calories : 465</p>
+                <p>Quantity: 1 plate</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\chicken-noodles.jpg' %}" alt="chicken Nnoodles">
+                <h3 style="font-size: 20px;">Chicken Noodles</h3>
+                <p>Calories : 530</p>
+                <p>Quantity: 1 plate</p>
+            </div>
+            <!---->
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\almonds.jpg' %}" alt="almonds">
+                <h3 style="font-size: 20px;">Almonds</h3>
+                <p>Calories : 110</p>
+                <p>Quantity :1 cup</p>
+            </div>        
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\apple.jpg' %}" alt="apple">
+                <h3 style="font-size: 20px;">Apple</h3>
+                <p>Calories : 62</p>
+                <p>Quantity :1</p>
+            </div>       
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\banana.jpg' %}" alt="banana">
+                <h3 style="font-size: 20px;">Banana</h3>
+                <p>Calories : 105</p>
+                <p>Quantity :1</p>
+            </div>        
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\grapes.jpg' %}" alt="grapes">
+                <h3 style="font-size: 20px;">Grapes</h3>
+                <p>Calories : 85</p>
+                <p>Quantity : 1 cup</p>
+            </div>       
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\orange.jpg' %}" alt="orange">
+                <h3 style="font-size: 20px;">Orange</h3>
+                <p>Calories : 58</p>
+                <p>Quantity :1</p>
+            </div>       
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\pasta.jpg' %}" alt="pasta">
+                <h3 style="font-size: 20px;">Pasta</h3>
+                <p>Calories : 480</p>
+                <p>Quantity :2 cups</p>
+            </div>        
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\peach.jpg' %}" alt="peach">
+                <h3 style="font-size: 20px;">Peach</h3>
+                <p>Calories : 67</p>
+                <p>Quantity :1</p>
+            </div>       
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\pear.jpg' %}" alt="pears">
+                <h3 style="font-size: 20px;">Pear</h3>
+                <p>Calories : 82</p>
+                <p>Quantity :1</p>
+            </div>       
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\pineapple.png' %} " alt="pineapple">
+                <h3 style="font-size: 20px;">Pineapple</h3>
+                <p>Calories : 89</p>
+                <p>Quantity :1 cup</p>
+            </div> 
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\Strawberry.jpg' %}" alt="Strawberry">
+                <h3 style="font-size: 20px;">Strawberry</h3>
+                <p>Calories : 53</p>
+                <p>Quantity :1 cup</p>
+            </div>     
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\Walnuts.jpg' %}" alt="Walnuts">
+                <h3 style="font-size: 20px;">Walnuts</h3>
+                <p>Calories : 550</p>
+                <p>Quantity :1 cup</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\watermelon.jpg' %}" alt="Watermelon">
+                <h3 style="font-size: 20px;">Watermelon</h3>
+                <p>Calories : 50</p>
+                <p>Quantity :1 cup</p>
+            </div>
+            <!---->
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\Pomegranate.jpg' %}" alt="Pomegranate">
+                <h3 style="font-size: 20px;">Pomegranate</h3>
+                <p>Calories : 95</p>
+                <p>Quantity :1 cup</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients\Buttered-Toast.jpg' %}" alt="Buttered Toast">
+                <h3 style="font-size: 20px;">Buttered Toast</h3>
+                <p>Calories : 430</p>
+                <p>Quantity :4 pieces</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients/oatmeal.jpg' %}" alt="Oat Meal">
+                <h3 style="font-size: 20px;">Oat Meal</h3>
+                <p>Calories :405 </p>
+                <p>Quantity :2 cups</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients/oat.jpg' %}" alt="Oat">
+                <h3 style="font-size: 20px;">Oat</h3>
+                <p>Calories :600 </p>
+                <p>Quantity :2 cups</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients/oatsidly.jpg' %}" alt="Oats Idly">
+                <h3 style="font-size: 20px;">Oats Idly</h3>
+                <p>Calories :312 </p>
+                <p>Quantity :5 pieces</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients/Mushroom.jpg' %}" alt="Mushroom">
+                <h3 style="font-size: 20px;">Mushroom</h3>
+                <p>Calories :330 </p>
+                <p>Quantity :1 bowl</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients/sweetpotatoes.jpg' %}" alt="Sweet Potatoes">
+                <h3 style="font-size: 20px;">Sweet Potatoes</h3>
+                <p>Calories :370 </p>
+                <p>Quantity :1 cup</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients/curdrice.jpg' %}" alt="Curd Rice">
+                <h3 style="font-size: 20px;">Curd Rice</h3>
+                <p>Calories :380</p>
+                <p>Quantity :1 cup</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients/Prones.jpg' %}" alt="Prones">
+                <h3 style="font-size: 20px;">Prones</h3>
+                <p>Calories :350</p>
+                <p>Quantity :1 bowl</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients/Fish.jpg' %}" alt="Fish">
+                <h3 style="font-size: 20px;">Fish</h3>
+                <p>Calories :400</p>
+                <p>Quantity :1 cup</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients/soyachunks.jpg' %}" alt="Soya Chunks">
+                <h3 style="font-size: 20px;">Soya Chunks</h3>
+                <p>Calories :410</p>
+                <p>Quantity :1 bowl</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients/Brownrice.jpg' %}" alt="Brown Rice">
+                <h3 style="font-size: 20px;">Brown Rice</h3>
+                <p>Calories :350</p>
+                <p>Quantity :1 bowl</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients/Mushroom briyani.jpg' %}" alt="Mushroom Briyani">
+                <h3 style="font-size: 20px;">Mushroom Briyani</h3>
+                <p>Calories : 440</p>
+                <p>Quantity : 1 cup</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients/Bread.jpg' %}" alt="Bread">
+                <h3 style="font-size: 20px;">Bread</h3>
+                <p>Calories :610</p>
+                <p>Quantity :8 slices</p>
+            </div>
+            <div class="segment">
+                <img class="img" src="{% static 'images/Ingredients/Mutton.jpg' %}" alt="Mutton">
+                <h3 style="font-size: 20px;">Mutton</h3>
+                <p>Calories : 470</p>
+                <p>Quantity : 1 cup</p>
+            </div>
+
+        {% endif %}
+
+
+
+        <br>
+        <br>
+        <br>
+
+    </body>
+</html>

@@ -1,0 +1,182 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Dietta</title>
+        <meta charset = "utf-8" />
+        <link rel = "icon" href ="{% static 'images/logo.jpg' %}" type = "image/x-icon">
+        <!---Front page-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!---->
+        <!--Testimonial-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.transitions.css">
+        <link rel="stylesheet" href="{% static 'css/testimonial.css' %}">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+        <!--Dietta-->
+        <link rel="stylesheet" href="{% static 'css/Dietta.css' %}">
+    </head>
+    <body>
+        <nav>    
+            <ul>
+                <a href="#"><img src="{% static 'images/logo-main.jpg' %}" alt="logo"></a>
+                <li><a href="#">Home</a></li>
+                <li><a href="{% url 'forms' %} ">Menu</a>
+                <li><a href="{% url 'About' %} ">About</a></li>
+                <li><a href="{% url 'contact' %} ">Contact</a></li>
+                <li><a href="{% url 'browse-foods' %} ">Browse Foods</a></li>
+            </ul>
+            <p style="color:#ddd;float:right;">Already Have a Account? <a  class="termsandcondition" href="{% url 'login-or-sign-up' %} ">Login&nbsp;&nbsp;</a></p>
+        </nav>
+        <div style="text-align:center">
+            <h2>Create a best and effective "Diet Plan" with us.</h2>
+        </div>
+        <!-- The App Section -->
+        <div class="container">
+            <div class="row">
+                <div class="column-66">
+                    <h1 class="xlarge-font"><b>Wanna Try</b></h1>
+                    <h1 class="large-font" style="color:MediumSeaGreen;"><b>Go Ahead!</b></h1>
+                    <p><span style="font-size:xx-large;">"EAT THE BEST,</span><br/><br/><span style="font-size:x-large;color:gray;"> LEAVE THE REST"</span><br/><br/>You should Use this app because it is non-profitable Diet planner and makes sure that it does not recommend same food for every day.</p>
+                    <button class="button" onclick="document.location='forms'">Get Started</button>
+                </div>
+                <div class="column-33">
+                <img src="{% static 'images/dietta-home-1.jpg' %}" width="335" height="471">
+                </div>
+            </div>
+        </div>
+
+        <!-- Clarity Section -->
+        <div class="container" style="background-color:#f1f1f1">
+            <div class="row">
+                <div class="column-33">
+                    <img src="{% static 'images/dietta-home-2.jpg' %}" alt="App" width="335" height="471">
+                </div>
+                <div class="column-66">
+                    <h1 class="xlarge-font"><b>Wanna Get About</b></h1>
+                    <h1 class="large-font" style="color:red;"><b>Personalized Updates!</b></h1>
+                    <p><span style="font-size:xx-large">"LET FOOD THY MEDICINE,</span><br/><br/><span style="font-size:x-large;color:gray;">THY MEDICINE SHALL BE THY FOOD"</span><br/><br/>Sign up to get the peronalized updates and it will be also easy for us to track your diet from the most trustable Diet planner.</p>
+                    <button class="button1" onclick="document.location='login-or-sign-up'">Sign Up</button><!--- style="background-color:red"-->
+                </div>
+            </div>
+        </div>
+
+        <!-- The App Section -->
+        <div class="container">
+            <div class="row">
+                <div class="column-66">
+                    <h1 class="xlarge-font"><b>Wanna Get Notified</b></h1>
+                    <h1 class="large-font" style="color:MediumSeaGreen;"><b>About Updates!</b></h1>
+                    <p><span style="font-size:xx-large">"EAT BETTER TO,</span><span style="font-size: x-large;color: gray;"><br/><br/>STAY HEALTH"</span><br/><br/>Enter your E-mail for subscription so that we can send you notifications and Updates about the App personally to your E-mail.</p>
+                    <div class="subscribe">
+                        <h2>Stay Updated</h2>
+                        <p>Subscribe to join our mailing list to receive updates and the posts</p>
+                        <form>
+                            <input type="email" class="email"placeholder="Enter email address">
+                            <input type="submit" class="submit" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+                <div class="column-33">
+                    <img src="{% static 'images/dietta-home-3.jpg' %}" width="335" height="471" >
+                </div>
+            </div>
+        </div>
+        <!---Testimonial-->
+        <div class="demo">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div id="testimonial-slider" class="owl-carousel">
+                            <div class="testimonial">
+                                <div class="pic">
+                                    <img src="{% static 'images/profile-dietta.png' %}">
+                                </div>
+                                <h3 class="title">Rithick</h3>
+                                <span class="post">Dietta User</span>
+                                <p class="description">
+                                    One of the best Diet app I have tried.I also expecting some further Updates in it.Thanks to Dietta and the team.
+                                </p>
+                            </div>
+                            <div class="testimonial">
+                                <div class="pic">
+                                    <img src="{% static 'images/profile-dietta.png' %}">
+                                </div>
+                                <h3 class="title">Fadil</h3>
+                                <span class="post">Dietta User</span>
+                                <p class="description">
+                                    A Nice Diet app which seems to be a Trusted One and Shows me a good categories of food to eat.
+                                </p>
+                            </div>
+                            <div class="testimonial">
+                                <div class="pic">
+                                    <img src="{% static 'images/profile-dietta.png' %}">
+                                </div>
+                                <h3 class="title">Ragul</h3>
+                                <span class="post">Dietta User</span>
+                                <p class="description">
+                                    A good App which shows me a Great results and now I starts to follows Dietta and its food recommendation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class=footer-1>
+                    <a class="termsandcondition" href="#">Home</a><br/>
+                    <a class="termsandcondition" href="{% url 'forms' %}">Menu</a><br/>
+                    <a class="termsandcondition" href="{% url 'About' %}">About Dietta</a><br/>
+                    <a class="termsandcondition" href="{% url 'contact' %}">Contact Us</a><br/>
+                    <a class="termsandcondition" href="{% url 'login-or-sign-up' %}">Login/Sign-up</a><br/>
+                    <a class="termsandcondition" href="{% url 'termsAndConditions' %}">Privacy Policy</a>
+                    <p style="color:white;">&#169;2021 Dietta.Inc .All rights Reserved.</p>
+            </div>
+            <div class="footer-1">
+                <p style="font-size: 1.3vm;color:white">Connect with Us on</p>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-youtube"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <div>
+                    <p><a href="{% url 'termsAndConditions' %}" class="termsandcondition">Terms and Conditions</a></p>
+                </div>
+            </div>
+            <div class="footer-1">
+                <div class="footer-right">
+                    <img src="{% static 'images/logo.jpg' %}"/>
+                </div>
+            </div>
+        </div>
+        <script>
+        function subscribe()
+        {
+            var x = document.getElementById("subscribe");
+            if(x.style.display == "none")
+            {
+                x.style.display = "block";
+            } 
+            else 
+            {
+                x.style.display = "none";
+            }
+        }
+        $(document).ready(function(){
+            $("#testimonial-slider").owlCarousel({
+                items:1,
+                itemsDesktop:[1000,1],
+                itemsDesktopSmall:[979,1],
+                itemsTablet:[768,1],
+                pagination:true,
+                transitionStyle:"backSlide",
+                autoPlay:true
+            });
+        });
+        </script>
+    </body>
+</html>
+

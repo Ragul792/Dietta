@@ -1,0 +1,111 @@
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Catch your Diet</title>
+        <link rel = "icon" href ="{% static 'images/logo.jpg' %}" type = "image/x-icon">
+
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <!--Social Icons-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="{% static 'css/forms.css' %}">
+
+        <script type="text/javascript" src="{% static 'js/validate.js' %}"></script>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-md-12">
+                <form name="forms" method="post" onsubmit="validate">
+                    {% csrf_token %}
+                    <h1>Information to create your Targets</h1>
+                    <fieldset>
+                        <legend><span class="number">1</span> Your Basic Info</legend>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="user_name" placeholder="Name">
+                        <label>Age:</label>
+                        <input class="textcolor" type="number"  name="age" placeholder="Age" required/>
+                        <label>Gender:</label>  
+                        <select required name='gender'>
+                            <option value=""></option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                        <legend><span class="number">2</span>Your correct Info</legend>
+                        <label>Height:</label><input class="textcolor" type="text" name="height" placeholder="in cms" required>
+                        <label>Weight:</label><input class="textcolor" type="text" name="weight" placeholder="in kgs"required>
+                        <label>Activity Type:</label>  
+                        <select required name='activitytype' >
+                            <option value="Sedentary">Sedentary</option>
+                            <option value="Moderately active" selected>Moderately active</option>
+                            <option value="Very active">Very active</option>
+                        </select>
+                        <label>Diabetes:</label>  
+                        <select required name='diabetes'>
+                            <option value="High">High</option>
+                            <option value="Normal" selected>Normal</option>
+                        </select>
+                        <label>Blood Pressure:</label>  
+                        <select required name='bloodpressure'>
+                            <option value="High">High</option>
+                            <option value="Normal" selected>Normal</option>
+                        </select>
+                        <label>Cholesterol:</label>  
+                        <select required name='cholesterol'>
+                            <option value="High">High</option>
+                            <option value="Normal" selected>Normal</option>
+                        </select>
+                        <label>Progress:</label>  
+                        <select required name='progress'>
+                            <option value="Weight Loss">Weight Loss</option>
+                            <option value="Normal Diet" selected>Normal Diet</option>
+                            <option value="Weight Gain">Weight Gain</option>
+                        </select>
+                        <label>Diet plan:</label>  
+                        <select required name='dietplan'>
+                            <option value="Both Veg and Non-Veg" selected>Both Veg and Non-Veg</option>
+                            <option value="Veg">Veg</option>
+                        </select>
+                    </fieldset>
+                    <fieldset>
+                        <legend><h3>Terms and Conditions</h3></legend>
+                            <div class="checkbox">
+                                <input type="checkbox" name="checkbox" required="required"><span>I accept the Privacy Policy for Dietta.For terms and Conditions visit <a class="here" href="{% url 'termsAndConditions' %}">here</a>.</span>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" name="checkbox" required="required"><span>I am Above 18+.</span>
+                            </div>
+                    </fieldset>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer">
+            <div class=footer-1>
+                    <a class="termsandcondition" href="{% url 'home' %}'">Home</a><br/>
+                    <a class="termsandcondition" href="#">Menu</a><br/>
+                    <a class="termsandcondition" href="{% url 'About' %}">About Dietta</a><br/>
+                    <a class="termsandcondition" href="{% url 'contact' %}">Contact Us</a><br/>
+                    <a class="termsandcondition" href="{% url 'login-or-sign-up' %}">Login/Sign-up</a><br/>
+                    <a class="termsandcondition" href="{% url 'termsAndConditions' %}">Privacy Policy</a>
+                    <p style="color:white;">&#169;2021 Dietta.Inc .All rights Reserved.</p>
+            </div>
+            <div class="footer-1">
+                <p style="font-size: 1.3vm;color:white">Connect with Us on</p>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-youtube"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <div>
+                    <p><a href="{% url 'termsAndConditions' %}" class="termsandcondition">Terms and Conditions</a></p>
+                </div>
+            </div>
+            <div class="footer-1">
+                <div class="footer-right">
+                    <img src="{% static 'images/logo.jpg' %}"/>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

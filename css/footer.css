@@ -1,0 +1,70 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*social media buttons*/
+.fa {
+    padding: 20erm;
+    font-size: 30px;
+    width: 70erm;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2%;
+    border-radius: 50%;
+  }
+  .fa-facebook{
+    font-size: 30px;
+    color: white;
+  }
+  .fa-youtube {
+    color: white;
+  }
+  .fa-instagram {
+    color: white;
+  }
+  .fa-facebook:hover{
+    color: #3B5998;
+  }
+  .fa-instagram:hover{
+    color:#c32aac;
+  }
+  .fa-youtube:hover{
+    color: #bb0000;
+  }
+  /*footer*/
+  .footer{
+    background-color: black;
+    text-align: center;
+    padding: 85px;
+  }
+  .termsandcondition:link,.termsandcondition:visited{
+    color:white;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  .termsandcondition:hover{
+    color: #8ebf42;
+  }
+  .termsandcondition{
+    text-align: center;
+  }
+  .footer:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .footer-1{
+    float: left;
+    width: 33.33%;
+    padding: 10px 10px;
+    text-align: center;
+    line-height: 25px;
+  }
+  .footer-right{
+    padding-left: 20%;
+  }
+  img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+    
